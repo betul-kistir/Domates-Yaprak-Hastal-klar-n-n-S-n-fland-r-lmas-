@@ -1,5 +1,4 @@
-# Domates-Yaprak-Hastaliklarinin Siniflandirilmasi
-# Domates Yaprak Hastalıklarının Sınıflandırılması: Laboratuvar ve Gerçek Ortam Veri Setleri Üzerine Karşılaştırmalı Bir Çalışma
+# Domates Yaprak Hastalıklarının Sınıflandırılması: Laboratuvar ve Gerçek Ortam Veri Setleri Üzerine Karşılaştırması
 
 Uygulamalı Yapay Zeka Dersi Dönem Projesi
 
