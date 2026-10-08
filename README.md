@@ -1,2 +1,2 @@
-# Domates-Yaprak-Hastal-klar-n-n-S-n-fland-r-lmas-
+# Domates-Yaprak-Hastaliklarinin Siniflandirilmasi
 uygulamalı yapay zeka dersi dönem projesi
