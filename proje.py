@@ -62,3 +62,17 @@ val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
 print(f"Eğitim Seti Boyutu: {len(train_dataset)}")
 print(f"Doğrulama Seti Boyutu: {len(val_dataset)}")
+
+###################################################################
+
+import torchvision.models as models
+import torch.nn as nn
+
+# 1. Önceden eğitilmiş ResNet18 modelini çağırıyoruz
+model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+
+# 2. ResNet18'in son katmanındaki çıkış sayısını bizim sınıf sayımıza (10) göre güncelliyoruz
+num_ftrs = model.fc.in_features
+model.fc = nn.Linear(num_ftrs, len(dataset.classes))
+
+print("ResNet18 modeli başarıyla yüklendi ve 10 sınıfa uyarlandı!")
