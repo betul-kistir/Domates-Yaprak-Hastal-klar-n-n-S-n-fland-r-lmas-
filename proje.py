@@ -44,3 +44,21 @@ dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 
 print(f"Toplam görsel sayısı: {len(dataset)}")
 print(f"Sınıf isimleri: {dataset.classes}")
+
+
+##########################################################################
+
+from torch.utils.data import DataLoader, random_split
+
+# 3. Veriyi %80 Eğitim ve %20 Doğrulama olarak ayırma
+train_size = int(0.8 * len(dataset))
+val_size = len(dataset) - train_size
+
+train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+
+# 4. DataLoader'ları oluşturma (32'şerli paketler)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
+
+print(f"Eğitim Seti Boyutu: {len(train_dataset)}")
+print(f"Doğrulama Seti Boyutu: {len(val_dataset)}")
