@@ -19,3 +19,28 @@ for c in classes:
 # Sonuçları yazdıralım
 for c, count in class_counts.items():
     print(f"{c}: {count} görsel")
+
+#####################################################
+
+import torch
+from torchvision import datasets, transforms
+
+# 1. Temel dönüşümleri tanımlayalım (Görseli 224x224 boyutuna getirip Tensöre çeviriyoruz)
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor()
+])
+
+# 2. Veri setini yasal dizinden yükleyelim
+data_dir = "data/plantvillage_tomato"
+dataset = datasets.ImageFolder(root=data_dir, transform=transform)
+
+print(f"Toplam görsel sayısı: {len(dataset)}")
+print(f"Sınıf isimleri: {dataset.classes}")
+
+# Veri setini yasal dizinden yükleyelim
+data_dir = "data/plantvillage_tomato"
+dataset = datasets.ImageFolder(root=data_dir, transform=transform)
+
+print(f"Toplam görsel sayısı: {len(dataset)}")
+print(f"Sınıf isimleri: {dataset.classes}")
